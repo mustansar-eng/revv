@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday❤🌹</title>
+</head>
+<body>
+    <body style="background-color: rgb(204, 147, 156); color: white;">
+        <div class="container">
+            <div class="floating-hearts" id="hearts-container"></div>
+            
+            <h1 style="color: rgb(255, 255, 255); text-align: center;">Happy Birthday, <span class="name-highlight">Maria</span>! <span class="heart">♥</span></h1>
+            
+            <div class="photo-frame">
+                <!-- Replace with your actual photo path -->
+                <img src="https://avatars.githubusercontent.com/u/207250523?v=4" alt="Maria and Me" width="250px" style="margin-left: 40%;">
+            </div>
+            
+            <p>My dearest <span class="name-highlight">Maria</span>,</p>
+            
+            <p>On this special day that brought you into the world, I want to remind you how incredibly blessed I feel to have <span class="name-highlight">Maria</span> in my life. From the moment we met, my world became brighter, fuller, and more beautiful because of you.</p>
+            
+            <p><span class="name-highlight">Maria</span>, your smile lights up my darkest days, your laughter is my favorite melody, and your love is the greatest gift I've ever received. Every day with you feels like a new adventure, and I can't wait to spend all my birthdays and yours by your side.</p>
+            
+            <p>You are my greatest love story, my perfect partner, and my best friend. As we build our life together, I promise to cherish you, support you, and love you more with each passing day.</p>
+            
+            <p>Happy birthday to the woman who makes my heart skip a beat with just a glance. May this year bring you as much joy as you've brought into my life, my beautiful <span class="name-highlight">Maria</span>.</p>
+            
+            <button id="special-button">Click for a Special Message</button>
+            <div id="hidden-message" class="hidden-message">
+                <p>My darling <span class="name-highlight">Maria</span>, I can't imagine my future without you in it. Every day I fall more in love with you, and I'm so excited to call you my wife. Here's to forever with you, my love.</p>
+                <p>Will you marry me all over again every day for the rest of our lives?</p>
+                <span class="heart" style="color: rgb(233, 19, 19);">♥</span> <span class="heart"  style="color: red;">♥</span> <span class="heart"  style="color: red;">♥</span>
+            </div>
+            
+            <div class="signature">Forever Yours,<br>[Your Name]</div>
+        </div>
+    
+        <script>
+            // Create floating hearts
+            function createHearts() {
+                const container = document.getElementById('hearts-container');
+                const heartCount = 15;
+                
+                for (let i = 0; i < heartCount; i++) {
+                    const heart = document.createElement('div');
+                    heart.classList.add('heart-shape');
+                     heart.innerHTML  = '💕';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animationDuration = (Math.random() * 10 + 5) + 's';
+                    heart.style.animationDelay = Math.random() * 5 + 's';
+                    heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                    container.appendChild(heart);
+                }
+            }
+ 
+        // Show hidden message
+        document.getElementById('special-button').addEventListener('click', function() {
+            const message = document.getElementById('hidden-message');
+            if (message.style.display === 'block') {
+                message.style.display = 'none';
+                this.textContent = 'Click for a Special Message';
+            } else {
+                message.style.display = 'block';
+                this.textContent = 'Hide Message';
+                // Create more hearts when message is shown
+                createHearts();
+            }
+        });
+        
+        // Initial hearts creation
+        window.onload = function() {
+            createHearts();
+            
+            // Replace with your actual photo
+            // document.querySelector('.photo-frame img').src = 'your-photo-with-maria.jpg';
+        };
+    </script>
+</body>
+</html>
